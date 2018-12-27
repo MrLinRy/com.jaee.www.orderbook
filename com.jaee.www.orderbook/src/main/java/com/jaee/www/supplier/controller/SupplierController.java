@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.jaee.www.supplier.service.SupplierBiz;
 
 import java.io.IOException;
-
+import javax.servlet.http.HttpSession;
 import javax.annotation.Resource;
 
+/**
+ * Created by c0de8ug on 16-2-16.
+ */
 
 @Controller
 
@@ -28,9 +31,9 @@ public class SupplierController {
         return "/supplier/supplier";
     }
     
-    @RequiresRoles(value = {"admin", "supplier","student"}, logical = Logical.OR)
+    @RequiresRoles(value = {"admin", "supplier","student","teacher"}, logical = Logical.OR)
     @RequestMapping("office.view")
-    public String office(Model m) {
+    public String office(Model m,HttpSession session) {
     	try {
 			OfficeController.createExcel(supplierBiz.findAllReviewedBook());
 		} catch (IOException e) {
@@ -38,6 +41,10 @@ public class SupplierController {
 			e.printStackTrace();
 		}
         m.addAttribute("reviewedBookList", supplierBiz.findAllReviewedBook());
-        return "/supplier/supplier";
+        String s = (String)session.getAttribute("username");
+    	if(s.equals("supplier")) 
+    		return "/supplier/supplier";
+    	else 
+			return  "redirect:/orderbook.do/orderbook.view";
     }
 }
