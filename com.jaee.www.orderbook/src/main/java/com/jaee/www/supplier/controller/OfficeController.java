@@ -26,7 +26,7 @@ public class OfficeController {
 	    // 获取桌面路径
 	    FileSystemView fsv = FileSystemView.getFileSystemView();
 	    String desktop = fsv.getHomeDirectory().getPath();
-	    String filePath = desktop + "/已添加教材.xls";
+	    String filePath = desktop + "审批公告.xls";
 
 	    File file = new File(filePath);
 	    OutputStream outputStream = new FileOutputStream(file);
