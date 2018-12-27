@@ -40,7 +40,7 @@ public class ClazzBizImpl implements ClazzBiz {
         clazzDao.delete(clazzId);
     }
 
-    public List<Class> findAll() {
+    public List<Clazz> findAll() {
         return clazzDao.findAll();
     }
 

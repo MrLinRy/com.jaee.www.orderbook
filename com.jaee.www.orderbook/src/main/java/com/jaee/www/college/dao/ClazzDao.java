@@ -14,7 +14,7 @@ public interface ClazzDao {
 
     public void delete(int clazzId);
 
-    public List<Class> findAll();
+    public List<Clazz> findAll();
 
     public int getClassCount(@Param("specName") String specName, @Param("year") String year);
 }

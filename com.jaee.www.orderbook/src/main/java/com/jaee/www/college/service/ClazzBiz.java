@@ -2,6 +2,7 @@ package com.jaee.www.college.service;
 
 import java.util.List;
 
+import com.jaee.www.entity.Clazz;
 import com.jaee.www.entity.custom.DeptAndSpec;
 
 /**
@@ -12,7 +13,7 @@ public interface ClazzBiz {
 
     public void delete(int clazzId);
 
-    public List<Class> findAll();
+    public List<Clazz> findAll();
 
     public List<DeptAndSpec> findDeptAndSpec();
 
