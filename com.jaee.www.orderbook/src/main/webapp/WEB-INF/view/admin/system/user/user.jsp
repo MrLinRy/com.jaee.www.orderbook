@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:include page="/WEB-INF/view/admin/nav.jsp"></jsp:include>
-
+<%--<jsp:include page="/user.do/findAll"></jsp:include>--%>
 
 <!-- Page Content -->
 <div id="page-wrapper">

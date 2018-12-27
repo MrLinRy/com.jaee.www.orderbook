@@ -21,7 +21,7 @@ public class SupplierBizImpl implements SupplierBiz {
     private OrderBookDao orderBookDao;
 
 
-    //TODO 这个代码偷懒了！！！！！要多烂有多烂直接拷贝的。。
+    //直接拷贝
     public List<ReviewedBookVo> findAllReviewedBook() {
         List<ReviewedBookVo> reviewedBookVoList = orderBookDao.findAllReviewedBook();
         return reviewedBookVoList;

@@ -31,7 +31,7 @@
     <link href="${pageContext.request.contextPath}/bower_components/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
 
-    <
+ 
 
 </head>
 <body>

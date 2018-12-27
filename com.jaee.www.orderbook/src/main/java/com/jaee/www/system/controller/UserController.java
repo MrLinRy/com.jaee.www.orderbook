@@ -29,7 +29,7 @@ public class UserController {
 
     @RequiresRoles("admin")
     @RequestMapping("user.view")
-    public String userView(Model m) throws InvocationTargetException, IllegalAccessException {
+    public String userView(Model m)  throws InvocationTargetException, IllegalAccessException{
         m.addAttribute("userList", userBiz.findAll());
         return "/admin/system/user/user";
     }
