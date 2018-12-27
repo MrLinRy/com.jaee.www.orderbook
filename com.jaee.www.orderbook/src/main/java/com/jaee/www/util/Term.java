@@ -2,9 +2,7 @@ package com.jaee.www.util;
 
 import java.util.List;
 
-/**
- * Created by c0de8ug on 16-2-15.
- */
+
 public class Term {
     String val;
     String text;

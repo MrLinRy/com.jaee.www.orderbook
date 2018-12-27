@@ -10,9 +10,6 @@ import com.jaee.www.supplier.service.SupplierBiz;
 
 import javax.annotation.Resource;
 
-/**
- * Created by c0de8ug on 16-2-16.
- */
 
 @Controller
 

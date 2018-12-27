@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.jaee.www.entity.Course;
 
-/**
- * Created by c0de8ug on 16-2-12.
- */
+
 public interface CourseDao {
     public List<Course> findAll();
 

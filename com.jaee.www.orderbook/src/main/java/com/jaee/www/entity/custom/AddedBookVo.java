@@ -4,9 +4,6 @@ import java.util.List;
 
 import com.jaee.www.entity.Section;
 
-/**
- * Created by c0de8ug on 16-2-15.
- */
 
 //TODO命名风格有问题
 public class AddedBookVo {

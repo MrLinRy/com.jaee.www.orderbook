@@ -8,9 +8,7 @@ import java.util.Set;
 import com.jaee.www.entity.User;
 import com.jaee.www.entity.custom.UserVo;
 
-/**
- * Created by c0de8ug on 16-2-9.
- */
+
 public interface UserBiz {
     public List<UserVo> findAll() throws InvocationTargetException, IllegalAccessException;
 

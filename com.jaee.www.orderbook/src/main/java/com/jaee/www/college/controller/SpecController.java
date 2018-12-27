@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 
-/**
- * Created by c0de8ug on 16-2-11.
- */
+
 @Controller
 @RequestMapping("spec.do")
 public class SpecController {

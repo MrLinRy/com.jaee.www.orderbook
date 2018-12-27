@@ -2,9 +2,7 @@ package com.jaee.www.entity.custom;
 
 import java.util.List;
 
-/**
- * Created by c0de8ug on 16-2-16.
- */
+
 public class ReviewedBookVo {
     String bookTitle;
     String isbn;

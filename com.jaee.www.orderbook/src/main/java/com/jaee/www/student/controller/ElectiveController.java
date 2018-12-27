@@ -11,9 +11,7 @@ import com.jaee.www.student.service.ElectiveBiz;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by c0de8ug on 16-2-16.
- */
+
 @Controller
 
 @RequestMapping("elective.do")

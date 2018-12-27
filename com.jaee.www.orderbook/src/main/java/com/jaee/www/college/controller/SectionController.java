@@ -14,9 +14,7 @@ import sun.misc.Timeable;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by c0de8ug on 16-2-12.
- */
+
 @Controller
 @RequestMapping("section.do")
 public class SectionController {

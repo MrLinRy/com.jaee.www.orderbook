@@ -6,9 +6,7 @@ import com.jaee.www.entity.Book;
 
 import java.util.List;
 
-/**
- * Created by c0de8ug on 16-2-14.
- */
+
 public interface BookDao {
 
     public void add(Book book);

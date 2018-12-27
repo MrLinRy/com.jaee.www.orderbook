@@ -15,9 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.InvocationTargetException;
 
-/**
- * Created by c0de8ug on 16-2-9.
- */
 
 @Controller
 @RequiresRoles("admin")

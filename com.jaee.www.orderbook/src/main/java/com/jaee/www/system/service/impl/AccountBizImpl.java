@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-/**
- * Created by c0de8ug on 16-2-14.
- */
+
 @Service
 public class AccountBizImpl implements AccountBiz {
 

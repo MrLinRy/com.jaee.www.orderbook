@@ -13,9 +13,7 @@ import javax.annotation.Resource;
 import javax.servlet.annotation.MultipartConfig;
 import java.io.IOException;
 
-/**
- * Created by c0de8ug on 16-2-12.
- */
+
 @Controller
 @RequestMapping("student.do")
 public class StudentController {

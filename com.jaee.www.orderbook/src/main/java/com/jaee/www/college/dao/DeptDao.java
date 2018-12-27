@@ -5,9 +5,7 @@ import java.util.List;
 import com.jaee.www.entity.Dept;
 import com.jaee.www.entity.custom.DeptAndSpec;
 
-/**
- * Created by c0de8ug on 16-2-10.
- */
+
 public interface DeptDao {
     public List<Dept> findAll();
 
