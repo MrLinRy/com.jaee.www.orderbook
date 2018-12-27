@@ -13,9 +13,7 @@ import javax.annotation.Resource;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by c0de8ug on 16-2-16.
- */
+
 @Service
 public class SupplierBizImpl implements SupplierBiz {
 

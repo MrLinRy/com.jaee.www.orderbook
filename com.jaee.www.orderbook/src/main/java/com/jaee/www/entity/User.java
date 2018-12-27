@@ -6,9 +6,7 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by c0de8ug on 16-2-9.
- */
+
 public class User {
     String username; //用户名
     String userId;

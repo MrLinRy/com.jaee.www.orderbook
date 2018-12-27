@@ -7,10 +7,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
 
-/**
- * Created by c0de8ug on 16-2-15.
- */
-//TODO 这个类的名字..!!呵呵,实在想不到了
+
+
 @Component
 public class TermContainer {
     //TODO 这个volatile用的好像很蠢...一个月一次目测不会出事。。
