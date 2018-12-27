@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jaee.www.supplier.service.SupplierBiz;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
 
 /**
@@ -25,6 +27,19 @@ public class SupplierController {
     @RequiresRoles(value = {"admin", "supplier","student"}, logical = Logical.OR)
     @RequestMapping("supplier.view")
     public String supplierView(Model m) {
+        m.addAttribute("reviewedBookList", supplierBiz.findAllReviewedBook());
+        return "/supplier/supplier";
+    }
+    
+    @RequiresRoles(value = {"admin", "supplier","student"}, logical = Logical.OR)
+    @RequestMapping("office.view")
+    public String office(Model m) {
+    	try {
+			OfficeController.createExcel(supplierBiz.findAllReviewedBook());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         m.addAttribute("reviewedBookList", supplierBiz.findAllReviewedBook());
         return "/supplier/supplier";
     }

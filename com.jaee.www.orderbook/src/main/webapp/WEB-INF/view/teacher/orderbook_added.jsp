@@ -136,10 +136,14 @@
                                         <button type="button" class="btn btn-warning"
                                                 onclick="alterAndSubmit(this)">修改
                                         </button>
+                                         <a href="${pageContext.request.contextPath}/supplier.do/office.view" class="btn btn-primary" role="button" onclick="return confirm('是否要导出为表格到桌面')">导出表格</a>
+                                
+                                        
                                     </div>
+                                    
                                 </div>
                             </div>
-                        </form>
+                                                   </form>
                     </div>
                 </div>
             </c:forEach>

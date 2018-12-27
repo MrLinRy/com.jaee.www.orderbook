@@ -1,4 +1,4 @@
-package com.jaee.www.college.controller;
+package com.jaee.www.supplier.controller;
 
 import java.io.*;
 //import java.util.Date;
@@ -16,51 +16,44 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
-import com.jaee.www.entity.custom.OrderBookReviewVo;
+import com.jaee.www.entity.custom.ReviewedBookVo;
 //import org.apache.poi.hssf.util.HSSFColor;
 
 
 
 public class OfficeController {
-	public static void createExcel(List<OrderBookReviewVo> books) throws IOException{
+	public static void createExcel(List<ReviewedBookVo> books) throws IOException{
 	    // 获取桌面路径
 	    FileSystemView fsv = FileSystemView.getFileSystemView();
 	    String desktop = fsv.getHomeDirectory().getPath();
-	    String filePath = desktop + "/审核教材.xls";
+	    String filePath = desktop + "/已添加教材.xls";
 
 	    File file = new File(filePath);
 	    OutputStream outputStream = new FileOutputStream(file);
 	    HSSFWorkbook workbook = new HSSFWorkbook();
 	    HSSFSheet sheet = workbook.createSheet("Sheet1");
 	    HSSFRow row = sheet.createRow(0);
-	    row.createCell(0).setCellValue("专业");
-	    row.createCell(1).setCellValue("课程名称");
-	    row.createCell(2).setCellValue("书号");
-	    row.createCell(3).setCellValue("书名");
-	    row.createCell(4).setCellValue("印刷日期");
-	    row.createCell(5).setCellValue("作者");
-	    row.createCell(6).setCellValue("出版社");
-	    row.createCell(7).setCellValue("教材类别");
-	    row.createCell(8).setCellValue("单价");
-	    row.createCell(9).setCellValue("学生数量");
-	    row.createCell(10).setCellValue("备注");
-	    row.createCell(11).setCellValue("状态");
+	    row.createCell(0).setCellValue("书名");
+	    row.createCell(1).setCellValue("ISMN");
+	    row.createCell(2).setCellValue("印刷日期");
+	    row.createCell(3).setCellValue("作者");
+	    row.createCell(4).setCellValue("出版社");
+	    row.createCell(5).setCellValue("数量");
+	    row.createCell(6).setCellValue("状态");
 	    row.setHeightInPoints(30); // 设置行的高度
-	    
+	    sheet.setColumnWidth(0, 20 * 256); // 设置列的宽度
+	    sheet.setColumnWidth(1, 20 * 256); // 设置列的宽度
+	    sheet.setColumnWidth(3, 20 * 256); // 设置列的宽度
+	    sheet.setColumnWidth(4, 20 * 256); // 设置列的宽度
 	    for (int i=1;i<=books.size();i++) {
 	    	HSSFRow row1 = sheet.createRow(i);
-		    row1.createCell(0).setCellValue(books.get(i-1).getSpeciality());
-		    row1.createCell(1).setCellValue(books.get(i-1).getCourseTitle());
-		    row1.createCell(2).setCellValue(books.get(i-1).getIsbn());
-		    row1.createCell(3).setCellValue(books.get(i-1).getBookTitle());
-		    row1.createCell(4).setCellValue(books.get(i-1).getDateOfPrinting());
-		    row1.createCell(5).setCellValue(books.get(i-1).getAuthor());
-		    row1.createCell(6).setCellValue(books.get(i-1).getPress());
-		    row1.createCell(7).setCellValue(books.get(i-1).getSecId());
-		    row1.createCell(8).setCellValue(books.get(i-1).getUnitPrice());
-		    row1.createCell(9).setCellValue(books.get(i-1).getStdCount());
-		    row1.createCell(10).setCellValue(books.get(i-1).getRemark());
-		    row1.createCell(11).setCellValue(books.get(i-1).getCategory());
+		    row1.createCell(0).setCellValue(books.get(i-1).getBookTitle());
+		    row1.createCell(1).setCellValue(books.get(i-1).getIsbn());
+		    row1.createCell(2).setCellValue(books.get(i-1).getDateOfPrinting());
+		    row1.createCell(3).setCellValue(books.get(i-1).getAuthor());
+		    row1.createCell(4).setCellValue(books.get(i-1).getPress());
+		    row1.createCell(5).setCellValue(books.get(i-1).getCount());
+		    row1.createCell(6).setCellValue(books.get(i-1).getCount());
 		}
 /*	    HSSFRow row1 = sheet.createRow(1);
 	    row1.createCell(0).setCellValue("1");
