@@ -93,4 +93,12 @@ public class OrderBookController {
         orderBookBiz.audit(orderBookReviewVoList);
         return "redirect:/orderbook.do/orderbook_review.view";
     }
+    
+    @RequiresRoles(value = {"admin", "teacher","student"}, logical = Logical.OR)
+    @RequestMapping("office")
+    public String office(HttpSession session) {
+        List<OrderBookReviewVo> orderBookReviewVoList = (List<OrderBookReviewVo>) session.getAttribute("notReviewedBookList");
+        orderBookBiz.audit(orderBookReviewVoList);
+        return "redirect:/orderbook.do/orderbook_review.view";
+    }
 }
