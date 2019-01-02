@@ -19,6 +19,25 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
+                        <table>
+								<tr>
+									<th width="100px"><img data-v-0d738edb=""
+										src="https://avatar.csdn.net/E/0/1/1_mr_linry.jpg?1546053904"
+										alt="" class="head"></th>
+									<td height="100"><span data-v-0d738edb="">昵称：MrLinRy</span>
+										<ul data-v-0d738edb="" class="self">
+											<li data-v-0d738edb="" class="comon">实名：林儒延</li>
+											<li data-v-0d738edb="" class="comon">性别：男</li>
+											<li data-v-0d738edb="" class="comon">生日：1997-12-01</li>
+											<li data-v-0d738edb="" class="comon">地区：中国 福建省 福州市</li>
+											<li data-v-0d738edb="" class="comon">行业：其他</li>
+											<li data-v-0d738edb="" class="comon last">职位：学生</li>
+											<li data-v-0d738edb="" class="intro"><span
+												data-v-0d738edb="" class="noWid">简介：</span> <span
+												data-v-0d738edb="" class="cont">勤学，专注</span></li>
+										</ul></td>
+								</tr>
+							</table>
                         </div>
                         <!-- /.table-responsive -->
                     </div>
