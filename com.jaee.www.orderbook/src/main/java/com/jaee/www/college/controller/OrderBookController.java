@@ -55,7 +55,9 @@ public class OrderBookController {
 
     @RequiresRoles(value = {"admin", "teacher","student"}, logical = Logical.OR)
     @RequestMapping("orderbook_add.view")
-    public String orderBookAddView(Model m) {
+    public String orderBookAddView(Model m, HttpSession session) {
+    	String staffId = (String) session.getAttribute("username");
+        m.addAttribute("selectedSectionList", orderBookBiz.findSelectedSection(staffId, TermContainer.now()));
         return "/teacher/orderbook_add";
     }
 

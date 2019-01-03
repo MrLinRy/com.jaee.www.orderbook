@@ -26,6 +26,7 @@ public class StudentController {
     public String studentView(Model m) {
         //TODO 将biz命名为和业务有关的函数方法,不知道是否正确留个吭
         m.addAttribute("studentList", studentBiz.studentView());
+        System.out.println(studentBiz.studentView().get(0).getClassName());
         return "/admin/college/student";
     }
 

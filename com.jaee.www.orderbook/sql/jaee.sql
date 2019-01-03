@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-01-02 11:45:12
+Date: 2019-01-03 10:41:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -54,7 +54,7 @@ CREATE TABLE `class` (
 -- ----------------------------
 -- Records of class
 -- ----------------------------
-INSERT INTO `class` VALUES ('1', null, '20161', '软件工程');
+INSERT INTO `class` VALUES ('16111', null, '20161', '软件工程');
 
 -- ----------------------------
 -- Table structure for course
@@ -132,11 +132,12 @@ CREATE TABLE `resource` (
   PRIMARY KEY (`id`),
   KEY `idx_resource_parent_id` (`parent_id`),
   KEY `idx_resource_parent_ids` (`parent_ids`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of resource
 -- ----------------------------
+INSERT INTO `resource` VALUES ('1', '申请审批信息', null, null, null, null, null, '0');
 
 -- ----------------------------
 -- Table structure for role
@@ -158,7 +159,7 @@ CREATE TABLE `role` (
 -- ----------------------------
 INSERT INTO `role` VALUES ('1', 'admin', '管理员', null, '1');
 INSERT INTO `role` VALUES ('2', 'student', '学生', null, '1');
-INSERT INTO `role` VALUES ('3', 'teacher', '老师', null, '1');
+INSERT INTO `role` VALUES ('3', 'teacher', '老师', '1', '1');
 INSERT INTO `role` VALUES ('4', 'supplier', '游客', null, '1');
 
 -- ----------------------------
@@ -240,7 +241,7 @@ CREATE TABLE `student` (
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('3161104138', 'MrLinRy', '35062619971201', '1997', '1', '13225919120', '1', '16', '福建', null, null);
+INSERT INTO `student` VALUES ('3161104138', 'MrLinRy', '35062619971201', '1997', '16111', '13225919120', '1', '16', '福建', null, null);
 
 -- ----------------------------
 -- Table structure for takes
