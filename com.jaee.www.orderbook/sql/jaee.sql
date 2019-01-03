@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-01-03 10:41:58
+Date: 2019-01-03 19:23:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,9 @@ CREATE TABLE `book` (
 -- ----------------------------
 -- Records of book
 -- ----------------------------
-INSERT INTO `book` VALUES ('Effective JAVA', '1561315135213', '2008', 'Joshua Bloch', '工业出版社', 'A', '88');
+INSERT INTO `book` VALUES ('1', '2', null, null, null, null, null);
+INSERT INTO `book` VALUES ('2', '3', null, null, null, null, null);
+INSERT INTO `book` VALUES ('3', '4', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for class
@@ -54,7 +56,9 @@ CREATE TABLE `class` (
 -- ----------------------------
 -- Records of class
 -- ----------------------------
-INSERT INTO `class` VALUES ('16111', null, '20161', '软件工程');
+INSERT INTO `class` VALUES ('162211', null, '20162', '软件工程');
+INSERT INTO `class` VALUES ('172531', null, '20172', '文化与传媒');
+INSERT INTO `class` VALUES ('192241', null, '20192', '通信工程');
 
 -- ----------------------------
 -- Table structure for course
@@ -71,7 +75,13 @@ CREATE TABLE `course` (
 -- ----------------------------
 -- Records of course
 -- ----------------------------
+INSERT INTO `course` VALUES ('C++编程设计', '必修课/公共课', '4', '软件工程');
 INSERT INTO `course` VALUES ('JavaEE Web', '必修课/公共课', '4', '软件工程');
+INSERT INTO `course` VALUES ('大学英语', '必修课/公共课', '2', '软件工程');
+INSERT INTO `course` VALUES ('数据库课程设计', '必修课/公共课', '3', '软件工程');
+INSERT INTO `course` VALUES ('现代传媒艺术', '必修课/公共课', '2', '文化与传媒');
+INSERT INTO `course` VALUES ('离散数学', '必修课/公共课', '2', '软件工程');
+INSERT INTO `course` VALUES ('通信原理', '必修课/公共课', '4', '通信工程');
 
 -- ----------------------------
 -- Table structure for department
@@ -82,11 +92,12 @@ CREATE TABLE `department` (
   `dept_name` varchar(10) NOT NULL,
   PRIMARY KEY (`dept_id`),
   KEY `dept_name` (`dept_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of department
 -- ----------------------------
+INSERT INTO `department` VALUES ('5', '中文系');
 INSERT INTO `department` VALUES ('3', '机电系');
 INSERT INTO `department` VALUES ('1', '管理系');
 INSERT INTO `department` VALUES ('2', '计算机与控制工程学院');
@@ -96,15 +107,14 @@ INSERT INTO `department` VALUES ('2', '计算机与控制工程学院');
 -- ----------------------------
 DROP TABLE IF EXISTS `order_book`;
 CREATE TABLE `order_book` (
-  `staff_id` varchar(30) DEFAULT '',
+  `staff_id` varchar(30) NOT NULL DEFAULT '',
   `sec_id` int(11) DEFAULT '0',
   `book_title` varchar(30) DEFAULT '',
-  `isbn` varchar(20) DEFAULT '',
+  `isbn` varchar(20) NOT NULL DEFAULT '',
   `remark` varchar(30) DEFAULT NULL,
   `approval` tinyint(1) DEFAULT NULL,
-  KEY `book_title` (`book_title`),
+  PRIMARY KEY (`staff_id`,`isbn`),
   KEY `isbn` (`isbn`),
-  KEY `staff_id` (`staff_id`),
   KEY `sec_id` (`sec_id`),
   CONSTRAINT `isbn` FOREIGN KEY (`isbn`) REFERENCES `book` (`isbn`),
   CONSTRAINT `sec_id` FOREIGN KEY (`sec_id`) REFERENCES `section` (`sec_id`),
@@ -114,7 +124,10 @@ CREATE TABLE `order_book` (
 -- ----------------------------
 -- Records of order_book
 -- ----------------------------
-INSERT INTO `order_book` VALUES ('teacher', '1', 'Effective JAVA', '1561315135213', '不要二手', '1');
+INSERT INTO `order_book` VALUES ('student', '4', '1', '2', '', '1');
+INSERT INTO `order_book` VALUES ('student', '1', '2', '3', '', '1');
+INSERT INTO `order_book` VALUES ('student', '2', '3', '4', '', '1');
+INSERT INTO `order_book` VALUES ('teacher', '1', '1', '2', '', '1');
 
 -- ----------------------------
 -- Table structure for resource
@@ -175,12 +188,15 @@ CREATE TABLE `section` (
   PRIMARY KEY (`sec_id`),
   KEY `course_title` (`course_title`),
   CONSTRAINT `course_title` FOREIGN KEY (`course_title`) REFERENCES `course` (`course_title`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of section
 -- ----------------------------
-INSERT INTO `section` VALUES ('1', 'JavaEE Web', '2016', '8', 'teacher');
+INSERT INTO `section` VALUES ('1', 'JavaEE Web', '20192', '8', 'teacher');
+INSERT INTO `section` VALUES ('2', '数据库课程设计', '20192', '4', 'student');
+INSERT INTO `section` VALUES ('3', '离散数学', '20192', '7', 'student');
+INSERT INTO `section` VALUES ('4', '大学英语', '20192', '5', 'student');
 
 -- ----------------------------
 -- Table structure for speciality
@@ -195,12 +211,14 @@ CREATE TABLE `speciality` (
   KEY `spec_name` (`spec_name`),
   KEY `dept_name` (`dept_name`),
   CONSTRAINT `dept_name` FOREIGN KEY (`dept_name`) REFERENCES `department` (`dept_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of speciality
 -- ----------------------------
 INSERT INTO `speciality` VALUES ('1', '计算机与控制工程学院', '软件工程', null);
+INSERT INTO `speciality` VALUES ('3', '中文系', '文化与传媒', null);
+INSERT INTO `speciality` VALUES ('4', '计算机与控制工程学院', '通信工程', null);
 
 -- ----------------------------
 -- Table structure for staff
@@ -215,7 +233,8 @@ CREATE TABLE `staff` (
 -- ----------------------------
 -- Records of staff
 -- ----------------------------
-INSERT INTO `staff` VALUES ('teacher', 'teacher');
+INSERT INTO `staff` VALUES ('student', '学生');
+INSERT INTO `staff` VALUES ('teacher', '老师');
 
 -- ----------------------------
 -- Table structure for student
@@ -241,7 +260,8 @@ CREATE TABLE `student` (
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('3161104138', 'MrLinRy', '35062619971201', '1997', '16111', '13225919120', '1', '16', '福建', null, null);
+INSERT INTO `student` VALUES ('3161104121', 't', '', '', '162211', '', null, '男', null, null, null);
+INSERT INTO `student` VALUES ('student', null, null, '20192', '172531', null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for takes
@@ -260,6 +280,9 @@ CREATE TABLE `takes` (
 -- ----------------------------
 -- Records of takes
 -- ----------------------------
+INSERT INTO `takes` VALUES ('student', '1', null);
+INSERT INTO `takes` VALUES ('student', '3', null);
+INSERT INTO `takes` VALUES ('student', '2', null);
 
 -- ----------------------------
 -- Table structure for timetable
@@ -278,6 +301,7 @@ CREATE TABLE `timetable` (
 -- ----------------------------
 -- Records of timetable
 -- ----------------------------
+INSERT INTO `timetable` VALUES ('1', '3', '2', '星期一', '1b203');
 
 -- ----------------------------
 -- Table structure for user
@@ -298,6 +322,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('3161104111', 'b4a2c8753b2d94f1ea7d10acf8219a72', '0ec8e908cba95b38ff81e0dfdb752d23', '2', '0');
+INSERT INTO `user` VALUES ('3161104121', '0a003b663994db83aa4b52ede07f646a', '9243c4352879f9ca08c18c8c2ca7de20', '2', '0');
 INSERT INTO `user` VALUES ('admin', '3ab82b226b3b60f4eab8cd0a88887ba0', 'cd0faf6f821809044e35e35fd23cf44a', '1', '0');
 INSERT INTO `user` VALUES ('student', '5476883b25e9c7bb0528b6fdfa0f5de7', '20d98880380112ff6404bdcaa4ba9c10', '2', '0');
 INSERT INTO `user` VALUES ('supplier', '19a885f6627571598621fe5f5e9cbbc5', '9c64193184d34fa04a205d06b93ca3d6', '4', '0');
