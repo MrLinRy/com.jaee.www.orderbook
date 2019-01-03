@@ -53,7 +53,7 @@ public class StudentController {
 
     @RequiresRoles("admin")
     @RequestMapping("delete")
-    public String delete(Model m, int studentId) {
+    public String delete(Model m, String studentId) {
         studentBiz.delete(studentId);
         return "redirect:/student.do/student.view";
     }

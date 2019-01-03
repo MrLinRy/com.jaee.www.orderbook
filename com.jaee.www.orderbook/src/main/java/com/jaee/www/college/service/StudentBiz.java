@@ -18,5 +18,5 @@ public interface StudentBiz {
 
     public void update(Student student);
 
-    public void delete(int studentId);
+    public void delete(String studentId);
 }

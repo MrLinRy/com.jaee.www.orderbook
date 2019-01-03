@@ -77,7 +77,7 @@ public class StudentBizImpl implements StudentBiz {
     //TODO 应该连带删除掉student和staff
     @Transactional
     @Override
-    public void delete(int studentId) {
+    public void delete(String studentId) {
         studentDao.delete(studentId);
     }
 

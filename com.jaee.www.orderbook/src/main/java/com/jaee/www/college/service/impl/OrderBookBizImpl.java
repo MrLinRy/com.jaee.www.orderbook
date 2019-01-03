@@ -149,7 +149,7 @@ public class OrderBookBizImpl implements OrderBookBiz {
             book.setUnitPrice(newUnitPrice);
             if (!usedByOtherSec)
                 bookDao.delete(bookTitle, isbn);
-            //TODO 以下代码写的很垃圾，用来判断图书存在
+            //TODO 用来判断图书存在
             if (bookDao.find(newBookTitle, newIsbn) == null)
                 bookDao.add(book);
             orderBookDao.delete(secId, bookTitle, isbn);

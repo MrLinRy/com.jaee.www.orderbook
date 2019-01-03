@@ -10,7 +10,7 @@
         <result property="studentName" column="student_name"/>
         <result property="idCard" column="id_card"/>
         <result property="year" column="year"/>
-        <result property="className" column="class_name"/>
+        <result property="className" column="class_id"/>
         <result property="telephoneNumber" column="telephone_number"/>
         <result property="student_origin_base" column="studentOriginBase"/>
         <result property="gender" column="gender"/>
@@ -23,7 +23,7 @@
     <insert id="add" parameterType="Student">
         INSERT INTO student
         (
-        student_id,student_name,id_card,year,class_name,
+        student_id,student_name,id_card,year,class_id,
         telephone_number,student_origin_base,gender,pic_path
         )
         VALUES
@@ -45,7 +45,7 @@
     <update id="update" parameterType="Student">
         UPDATE student
         SET student_name = #{studentName},id_card = #{IdCard},
-        year = #{year},class_name = #{className},telephone_number = #{telephoneNumber},
+        year = #{year},class_id = #{className},telephone_number = #{telephoneNumber},
         student_origin_base = #{studentOriginBase},gender = #{gender},photo = #{photo}
         WHERE student_id = #{studentId}
     </update>

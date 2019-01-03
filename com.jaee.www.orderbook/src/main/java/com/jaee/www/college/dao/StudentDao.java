@@ -12,5 +12,5 @@ public interface StudentDao {
 
     public void update(Student student);
 
-    public void delete(int studentId);
+    public void delete(String studentId);
 }
