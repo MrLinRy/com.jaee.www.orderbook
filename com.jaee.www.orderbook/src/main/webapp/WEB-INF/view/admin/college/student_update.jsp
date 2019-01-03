@@ -20,26 +20,26 @@
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <form action="${pageContext.request.contextPath}/student.do/update" method="post" enctype="multipart/form-data">
-                                <label>学号:${param.get("studentId")}</label>
-                                <label> </label>
+                                <label>学号</label>
+                                 <input class="form-control" name="studentId" value="${param.get("studentId")}">
                                 <label>姓名</label>
-                                <input class="form-control" name="name">
+                                <input class="form-control" name="studentName" value="${param.get("studentName")}">
                                 <label>身份证号</label>
-                                <input class="form-control" name="idCard">
+                                <input class="form-control" name="idCard" value="${param.get("idCard")}">
                                 <label>性别</label>
                                 <select class="form-control" name="gender">
                                     <option>男</option>
                                     <option>女</option>
                                 </select>
                                 <label>联系电话</label>
-                                <input class="form-control" name="telephoneNumber">
+                                <input class="form-control" name="telephoneNumber" value="${param.get("telephoneNumber")}">
                                 <label>班级</label>
-                                <input class="form-control" name="className">
+                                <input class="form-control" name="className" value="${param.get("className")}">
                                 <label>年级</label>
-                                <input class="form-control" name="year">
-                                <label>生源地</label>
-                                <input class="form-control" name="studentOriginBase">
-                                <label>照片</label>
+                                <input class="form-control" name="year" value="${param.get("year")}">
+                               <%--  <label>生源地</label>
+                                <input class="form-control" name="studentOriginBase" value="${param.get("studentOriginBase")}">
+ --%>                                <label>照片</label>
                                 <input name="pic" type="file">
                                 <label></label>
                                 <button type="submit"

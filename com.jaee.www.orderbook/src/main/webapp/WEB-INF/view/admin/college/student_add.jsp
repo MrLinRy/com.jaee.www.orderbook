@@ -40,8 +40,8 @@
                                 <input class="form-control" name="className">
                                 <label>年级</label>
                                 <input class="form-control" name="year">
-                                <label>生源地</label>
-                                <input class="form-control" name="studentOriginBase">
+                                <!-- <label>生源地</label>
+                                <input class="form-control" name="studentOriginBase"> -->
                                 <label>照片</label>
                                 <input name="pic" type="file">
                                 <label></label>

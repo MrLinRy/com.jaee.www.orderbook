@@ -38,15 +38,15 @@
         #{gender},
         #{picPath})
     </insert>
-    <delete id="delete" parameterType="int">
+    <delete id="delete" parameterType="String">
         DELETE FROM student WHERE student_id = #{value}
     </delete>
 
     <update id="update" parameterType="Student">
         UPDATE student
-        SET student_name = #{studentName},id_card = #{IdCard},
+        SET student_name = #{studentName},id_card = #{idCard},
         year = #{year},class_id = #{className},telephone_number = #{telephoneNumber},
-        student_origin_base = #{studentOriginBase},gender = #{gender},photo = #{photo}
+        student_origin_base = #{studentOriginBase},gender = #{gender},pic_path = #{picPath}
         WHERE student_id = #{studentId}
     </update>
 

@@ -28,7 +28,7 @@
                                     <th>电话号码</th>
                                     <th>班级</th>
                                     <th>年级</th>
-                                    <th>生源地</th>
+                                    <!--  <th>生源地</th>-->
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -43,9 +43,9 @@
                                         <td>${student.telephoneNumber}</td>
                                         <td>${student.className}</td>
                                         <td>${student.year}</td>
-                                        <td>${student.studentOriginBase}</td>
+                                        <!--<td>${student.studentOriginBase}</td>-->
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/student.do/student_update.view?studentId=${student.studentId}">修改</a>
+                                            <a href="${pageContext.request.contextPath}/student.do/student_update.view?studentId=${student.studentId}&studentName=${student.studentName}&idCard=${student.idCard}&year=${student.year}&className=${student.className}&telephoneNumber=${student.telephoneNumber}">修改</a>
                                         </td>
                                         <td>
                                             <a href="${pageContext.request.contextPath}/student.do/delete?studentId=${student.studentId}"

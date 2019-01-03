@@ -50,6 +50,13 @@ public class StudentController {
         studentBiz.add(student, pic);
         return "redirect:/student.do/student.view";
     }
+    
+    @RequiresRoles("admin")
+    @RequestMapping("update")
+    public String update(Student student) throws IOException {
+        studentBiz.update(student);
+        return "redirect:/student.do/student.view";
+    }
 
     @RequiresRoles("admin")
     @RequestMapping("delete")
