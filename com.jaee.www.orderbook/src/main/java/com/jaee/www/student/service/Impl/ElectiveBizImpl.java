@@ -24,7 +24,11 @@ public class ElectiveBizImpl implements ElectiveBiz {
     public void add(int secId, String stdId) {
         takesDao.add(secId, stdId);
     }
-
+//    @Override
+//    public void add(Section section) {
+//    	sectionDao.add(section);
+//    }
+    
     @Override
     public List<SectionCustom> findAllSection() {
         return sectionDao.findAllCustom();

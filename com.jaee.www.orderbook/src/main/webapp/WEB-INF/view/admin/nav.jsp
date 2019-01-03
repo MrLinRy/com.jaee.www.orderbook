@@ -112,7 +112,10 @@
                                 <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/">
                                     秘书审核</a>
                             </li>
-
+                            <li>
+                                <a href="${pageContext.request.contextPath}/section.do/section.view/">
+                                    课程安排</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>

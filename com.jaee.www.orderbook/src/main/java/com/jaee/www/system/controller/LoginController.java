@@ -52,6 +52,7 @@ public class LoginController {
                     return "/student/main";
                 case "supplier":
                     return "redirect:supplier.do/supplier.view";
+                default:return "/student/main";
             }
         }
 

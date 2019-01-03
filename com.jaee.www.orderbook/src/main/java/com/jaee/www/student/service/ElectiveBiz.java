@@ -8,6 +8,7 @@ import com.jaee.www.entity.custom.SectionCustom;
 
 public interface ElectiveBiz {
     public void add(int secId, String stdId);
+//	public void add(Section section);
 
     public List<SectionCustom> findAllSection();
 

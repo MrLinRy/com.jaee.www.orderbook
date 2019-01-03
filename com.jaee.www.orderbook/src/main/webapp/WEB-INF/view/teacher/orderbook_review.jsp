@@ -6,14 +6,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">已添加教材</h1>
+                <h1 class="page-header">待审核教材</h1>
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            已添加教材
+                            未审核教材
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

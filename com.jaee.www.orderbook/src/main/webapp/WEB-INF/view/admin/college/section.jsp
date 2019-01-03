@@ -26,7 +26,7 @@
                                     <th>授课老师</th>
                                     <th>授课周次,星期,节次</th>
                                     <th>上课教室</th>
-                                    <th></th>
+                                    
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -35,12 +35,20 @@
                                         <td>${section.secId}</td>
                                         <td>${section.courseTitle}</td>
                                         <td>${section.teacher}</td>
+                                        <td>
                                         <c:forEach var="timetable" items="${section.timetableList}">
-                                            <td>
-                                                    ${timetable.weeks}周 ${timetable.week} ${timetable.time}节
-                                            </td>
-                                            <td>${timetable.classroom}</td>
+                                        
+                                             ${timetable.weeks}周 ${timetable.week} ${timetable.time}节 
+                                        
+                                        
                                         </c:forEach>
+                                        </td>
+                                        <td>
+                                        <c:forEach var="timetable" items="${section.timetableList}">
+                                          ${timetable.classroom}
+                                       
+                                        </c:forEach>
+										</td>
                                         <td>
                                             <a href="${pageContext.request.contextPath}/section.do/delete?secId=${section.secId}"
                                                onclick="return confirm('是否要删除该开课')">删除</a>

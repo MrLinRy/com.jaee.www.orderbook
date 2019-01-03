@@ -88,7 +88,7 @@
                         <a href="${pageContext.request.contextPath}/orderbook.do/orderbook.view"> 教材申请</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/elective.do/elective.view"> 选课</a>
+                        <a href="${pageContext.request.contextPath}/elective.do/elective.view"> 课程表</a>
                     </li>
 
                 </ul>
