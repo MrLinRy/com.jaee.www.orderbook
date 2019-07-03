@@ -6,11 +6,15 @@
 	if(s.equals("teacher")){
 		%>
         <jsp:include page="/WEB-INF/view/teacher/nav.jsp"></jsp:include>
+		<%
+	}else if(s.equals("admin")){
+		%>
+		<jsp:include page="/WEB-INF/view/teacher/orderbook_review.jsp" ></jsp:include>
 		<% 
 	}else{
 		%>
 		<jsp:include page="/WEB-INF/view/student/nav.jsp" ></jsp:include>
-		<% 
+		<%
 	}
 %>
 
@@ -28,6 +32,7 @@
                 <%
               }
            %>
+           
             
         </div>
         <div class="row" id="addedBookContainer">
@@ -38,12 +43,14 @@
                 <%
               }
            %>
+           
             
         </div>
         
         <div>
             <h1 class="page-header">添加教材</h1>
         </div>
+
         <jsp:include page="/orderbook.do/orderbook_add.view"></jsp:include>
     </div>
 

@@ -26,13 +26,13 @@
                                 <input class="form-control" name="weeks">
                                 <label>星期</label>
                                 <select class="form-control" name="week">
-                                    <option>星期一</option>
-                                    <option>星期二</option>
-                                    <option>星期三</option>
-                                    <option>星期四</option>
-                                    <option>星期五</option>
-                                    <option>星期六</option>
-                                    <option>星期天</option>
+                                    <option>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                    <option>Sunday</option>
                                 </select>
                                 <label>节次(输入格式1,2,3,4,5,6,7)</label>
                                 <input class="form-control" name="time">

@@ -22,10 +22,10 @@
                             <form action="${pageContext.request.contextPath}/role.do/add" method="post">
                                 <label>角色名</label>
                                 <input class="form-control" name="role">
-                                <label>角色描述</label>
+                                <label>角色</label>
                                 <input class="form-control" name="description">
-                                <%--<label>拥有的资源</label>--%>
-                                <%--<input class="form-control" name="resourceIds">--%>
+                                <label>拥有的权限</label>
+                                <input class="form-control">
                                 <label></label>
                                 <button type="submit"
                                         class="btn btn-primary form-control">添加

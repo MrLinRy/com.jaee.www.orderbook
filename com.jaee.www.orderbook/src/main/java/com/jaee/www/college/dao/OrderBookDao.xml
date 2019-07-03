@@ -44,15 +44,17 @@
     </resultMap>
 
     <insert id="add" parameterType="OrderBook">
-        INSERT INTO order_book(staff_id,sec_id,book_title,isbn,remark,approval) VALUES(#{staffId},#{secId},#{bookTitle},#{isbn},#{remark},#{approval})
+        <!--  insert into order_book(staff_id,sec_id,book_title,ibsn,remark,approval) VALUES('teacher',#{sec_id},#{bookTitle},#{isbn},#{remark},#{approval})-->
+        INSERT INTO book(book_title,isbn,date_of_printing,author,press,category,unit_price)
+        VALUES(#{bookTitle},#{isbn},#{dateOfPrinting},#{author},#{press},#{category},#{unitPrice})
     </insert>
 
     <select id="findAddedBookInfoList" parameterType="String" resultMap="addedBookInfo_map">
         SELECT section.sec_id,section.course_title,book.isbn,book.book_title,date_of_printing,author,press,category,unit_price,remark
                 FROM order_book
-                INNER JOIN book ON order_book.book_title = book.book_title AND order_book.isbn = book.isbn
+                INNER JOIN book ON order_book.book_title = book.book_title 
                 INNER JOIN section ON order_book.sec_id = section.sec_id
-                WHERE order_book.staff_id = #{value}
+
     </select>
 
     <select id="usedByOtherSec" parameterType="map" resultType="int">
@@ -63,10 +65,10 @@
         SELECT section.sec_id,speciality,course.course_title,book.isbn,book.book_title,
         date_of_printing,author,press,category,unit_price,remark
         FROM order_book
-        INNER JOIN book ON order_book.isbn = book.isbn AND order_book.book_title = book.book_title
+        INNER JOIN book ON order_book.isbn = book.isbn 
         INNER JOIN section ON order_book.sec_id = section.sec_id
         INNER JOIN course ON section.course_title = course.course_title
-        WHERE approval = 0
+        
     </select>
 
     <select id="findAllReviewedBook" resultMap="reviewedBookVo_map">
@@ -84,6 +86,6 @@
     </delete>
 
     <update id="audit" parameterType="map">
-        UPDATE order_book SET approval = 1 WHERE sec_id = #{secId} AND book_title = #{bookTitle} AND isbn=#{isbn}
+        UPDATE order_book SET approval = 1 WHERE  sec_id = #{secId} AND book_title = #{bookTitle} AND isbn = #{isbn}
     </update>
 </mapper>

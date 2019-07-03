@@ -6,7 +6,7 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div>
-            <h1 class="page-header">选课</h1>
+            <h1 class="page-header">课程表</h1>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>课程ID</th>
                                     <th>课程名称</th>
-                                    <!-- <th>授课老师</th> -->
+                                    <th>授课老师</th>
                                     
                                 </tr>
                                 </thead>
@@ -31,7 +31,7 @@
                                     <tr>
                                         <td>${section.secId}</td>
                                         <td>${section.courseTitle}</td>
-                                        <%-- <td>${section.teacher}</td> --%>
+                                        <td>${section.teacher}</td>
                                         
                                     </tr>
                                 </c:forEach>

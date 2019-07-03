@@ -24,7 +24,7 @@
     </resultMap>
 
     <select id="findSelectedSection" parameterType="map" resultMap="sec_map">
-        SELECT sec_id,course_title FROM section WHERE staff_id = #{staffId} AND year = #{year}
+        SELECT sec_id,course_title FROM section 
     </select>
 
     <select id="findAll" resultMap="sec_map">

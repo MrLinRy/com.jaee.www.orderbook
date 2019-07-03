@@ -13,7 +13,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4">
-                                                <select class="form-control" name="form1"
+                                                <select class="form-control" name="sec_id"
                                                         style="font-size: 14px;">
                                                     <c:forEach var="section" items="${selectedSectionList}">
                                                         <option value="${section.secId}">${section.courseTitle}</option>
@@ -42,40 +42,41 @@
                                                 <tr>
                                                     <td class="col-md-2">
                                                         <input type="text" class="form-control"
-                                                               name="form1">
+                                                               name="bookTitle">
                                                     </td>
                                                     <td class="col-md-3">
                                                         <input type="text" class="form-control"
-                                                               name="form1">
+                                                               name="isbn">
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
-                                                               name="form1">
+                                                               name="dateofPrinting">
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
-                                                               name="form1">
+                                                               name="remark">
                                                     </td>
+                                                    
                                                     <td class="col-md-2">
                                                         <input type="text" class="form-control"
-                                                               name="form1">
+                                                               name="author">
                                                     </td>
                                                     <td class="col-md-1">
-                                                        <select class="form-control" name="form1"
+                                                        <select class="form-control" name="category"
                                                                 style="min-width: 60px">
-                                                            <option>A</option>
-                                                            <option>B</option>
-                                                            <option>C</option>
-                                                            <option>D</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
                                                         </select>
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="number" class="form-control"
-                                                               name="form1">
+                                                               name="unitPice">
                                                     </td>
                                                     <td class="col-md-1">
                                                         <input type="text" class="form-control"
-                                                               name="form1">
+                                                               name="approval">
                                                     </td>
                                                 </tr>
                                                 </tbody>

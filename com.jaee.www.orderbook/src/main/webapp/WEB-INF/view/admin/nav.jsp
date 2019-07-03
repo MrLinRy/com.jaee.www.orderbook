@@ -98,18 +98,18 @@
                             <li>
                                 <a href="${pageContext.request.contextPath}/spec.do/spec.view"> 专业设置</a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="${pageContext.request.contextPath}/clazz.do/clazz.view"> 班级管理</a>
-                            </li>
-                            <li>
+                            </li>-->
+                              <li>
                                 <a href="${pageContext.request.contextPath}/course.do/course.view"> 添加课程</a>
                             </li>
                             
-                            <li>
+                            <!-- -<li>
                                 <a href="${pageContext.request.contextPath}/student.do/student.view"> 学生管理</a>
-                            </li>
+                            </li> -->
                             <li>
-                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/">
+                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook.view/">
                                     秘书审核</a>
                             </li>
                             <li>

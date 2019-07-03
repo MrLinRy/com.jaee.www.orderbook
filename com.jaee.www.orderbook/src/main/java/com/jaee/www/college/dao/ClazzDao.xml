@@ -14,7 +14,7 @@
     </resultMap>
 
     <select id="findAll" resultMap="clazz_map">
-        SELECT * FROM class
+        SELECT * FROM class 
     </select>
 
     <insert id="add" parameterType="Clazz">

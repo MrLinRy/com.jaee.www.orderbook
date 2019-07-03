@@ -35,9 +35,9 @@
                                 </select>
 
                                 <label></label>
-                                <button type="submit"
-                                        class="btn btn-primary form-control">添加
-                                </button>
+                                <a href="${pageContext.request.contextPath}/user.do/user_add.view"><button type="submit"
+                                        class="btn btn-primary form-control"  >添加
+                                </button></a>
                             </form>
                         </div>
                         <!-- /.table-responsive -->
